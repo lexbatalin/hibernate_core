@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.lexbatalin'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 11
+
+dependencies {
+    compile 'org.hibernate:hibernate-core:5.5.7.Final'
+    compile 'org.projectlombok:lombok:1.18.20'
+    compile 'mysql:mysql-connector-java:8.0.26'
+
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
