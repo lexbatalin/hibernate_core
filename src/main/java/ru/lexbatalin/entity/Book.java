@@ -2,6 +2,7 @@ package ru.lexbatalin.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -9,6 +10,7 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
+@ToString
 public class Book implements Serializable {
     private static final long serialVersionUID = 3704467085474021899L;
 
@@ -19,7 +21,7 @@ public class Book implements Serializable {
     @Column
     private String name;
 
-    @Column
-    private Long author_id;
+    @Column(name = "author_id")
+    private Long authorId;
 
 }

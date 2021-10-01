@@ -13,8 +13,15 @@ sourceCompatibility = 11
 
 dependencies {
     compile ('org.hibernate:hibernate-core:5.5.7.Final')
-    compile ('org.projectlombok:lombok:1.18.20')
+
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+
     compile ('mysql:mysql-connector-java:8.0.26')
+    compile ('org.slf4j:slf4j-log4j12:1.7.30')
 
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'

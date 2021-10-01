@@ -1,8 +1,12 @@
 ru/lexbatalin/util/HibernateUtil.java
  ru.lexbatalin.util.HibernateUtil
-ru/lexbatalin/main/Start.java
- ru.lexbatalin.main.Start
+ru/lexbatalin/helper/AuthorHelper.java
+ ru.lexbatalin.helper.AuthorHelper
 ru/lexbatalin/entity/Author.java
  ru.lexbatalin.entity.Author
 ru/lexbatalin/entity/Book.java
  ru.lexbatalin.entity.Book
+ru/lexbatalin/helper/BookHelper.java
+ ru.lexbatalin.helper.BookHelper
+ru/lexbatalin/main/Start.java
+ ru.lexbatalin.main.Start
