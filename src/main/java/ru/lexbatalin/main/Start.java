@@ -1,5 +1,6 @@
 package ru.lexbatalin.main;
 
+import org.jboss.logging.Logger;
 import ru.lexbatalin.entity.Author;
 import ru.lexbatalin.entity.Book;
 import ru.lexbatalin.helper.AuthorHelper;
@@ -8,12 +9,11 @@ import ru.lexbatalin.util.HibernateUtil;
 
 public class Start {
 
-    public static void main(String[] args) {
-        Author author = new Author("test");
-//        author.setName("Mikhail");
-//        author.setSecondName("Lermontov");
-//        author.setId(1L);
+    private  static final Logger LOG = Logger.getLogger(AuthorHelper.class);
 
-        new AuthorHelper().addAuthor(author);
+    public static void main(String[] args) {
+
+        new AuthorHelper().getAuthorListWithParams();
+//        System.out.println(new AuthorHelper().getAuthorById(1L));
     }
 }

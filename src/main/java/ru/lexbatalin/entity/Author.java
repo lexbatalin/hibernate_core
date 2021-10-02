@@ -14,6 +14,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @DynamicUpdate
 @DynamicInsert
+@EqualsAndHashCode(of = "id")
 public class Author implements Serializable {
 
     private static final long serialVersionUID = -4813153263848128015L;
