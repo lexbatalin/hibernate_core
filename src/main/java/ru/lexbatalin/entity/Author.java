@@ -6,6 +6,8 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -34,4 +36,8 @@ public class Author implements Serializable {
     @Column(name = "second_name")
     private String secondName;
 
+    @OneToMany(fetch = FetchType.LAZY,
+            targetEntity = Book.class,
+            mappedBy = "author")
+    private List<Book> bookList = new ArrayList<>();
 }

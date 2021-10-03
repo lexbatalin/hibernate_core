@@ -128,5 +128,43 @@ public class AuthorHelper {
         session.close();
     }
 
+    public void deleteById(long id) {
 
+        Session session = sessionFactory.openSession();
+
+        Author author = session.get(Author.class, id);
+
+        if (nonNull(author)) {
+            session.delete(author);
+        }
+
+        session.getTransaction().commit();
+        session.close();
+    }
+
+    public void deleteByNameParam(String name) {
+
+        Session session = sessionFactory.openSession();
+        CriteriaBuilder cb = session.getCriteriaBuilder();
+        CriteriaDelete<Author> criteriaDelete = cb.createCriteriaDelete(Author.class);
+        Root<Author> root = criteriaDelete.from(Author.class);
+        ParameterExpression<String> nameParam = cb.parameter(String.class, "name");
+        ParameterExpression<String> secondParam = cb.parameter(String.class, "secondName");
+
+        criteriaDelete.where(cb.or(
+                cb.and(
+                        cb.like(root.get("name"), nameParam),
+                        cb.like(root.get("secondName"), secondParam)
+                ),
+                        cb.equal(root.get("name"), "some_name")
+            )
+        );
+        Query query = session.createQuery(criteriaDelete);
+        query.setParameter("name", name);
+        query.setParameter("secondName", "%t%");
+        query.executeUpdate();
+        session.getTransaction().commit();
+        session.close();
+
+    }
 }

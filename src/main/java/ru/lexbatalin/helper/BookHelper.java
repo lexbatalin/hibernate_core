@@ -44,7 +44,7 @@ public class BookHelper {
             excitingBook = session.get(Book.class, book.getId());
             if (nonNull(excitingBook)) {
                 excitingBook.setName(book.getName());
-                excitingBook.setAuthorId(book.getAuthorId());
+                excitingBook.setAuthor(book.getAuthor());
                 book = excitingBook;
             }
         }

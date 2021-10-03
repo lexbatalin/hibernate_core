@@ -25,7 +25,8 @@ public class Book implements Serializable {
     @Column
     private String name;
 
-    @Column(name = "author_id")
-    private Long authorId;
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Author author;
 
 }

@@ -13,7 +13,8 @@ public class Start {
 
     public static void main(String[] args) {
 
-        new AuthorHelper().getAuthorListWithParams();
+//        new AuthorHelper().getAuthorListWithParams();
 //        System.out.println(new AuthorHelper().getAuthorById(1L));
+        System.out.println(new BookHelper().getBookList());
     }
 }
